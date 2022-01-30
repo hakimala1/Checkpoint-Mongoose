@@ -1,7 +1,8 @@
 const Product = require("../Models/Product")
 
 exports.addProduct=async(req,res)=>{
-    const{nameProduct,discProduct,prixProduct}=req.body
+    let {nameProduct,discProduct,prixProduct}=req.body
+    prixProduct=Number(prixProduct)
     try {
         const product= new Product({
             nameProduct,discProduct,prixProduct
